@@ -1,8 +1,29 @@
 <template>
   <v-container>
-    <v-layout row>
-      <v-flex xs12>
-        <h1>Ad</h1>
+    <v-layout>
+      <v-flex xs12 sm6>
+        <v-card>
+          <img :src="ad.src" width="100%" alt="">
+          <v-card-text>
+            <h2 class="text--primary">{{ ad.title }}</h2>
+            <p>{{ ad.descr }}</p>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+              outlined
+              min-width="120"
+            >
+              Edit
+            </v-btn>
+            <v-btn
+              class="success"
+              min-width="120"
+            >
+              Buy
+            </v-btn>
+          </v-card-actions>
+        </v-card>
       </v-flex>
     </v-layout>
   </v-container>
@@ -10,8 +31,12 @@
 
 <script>
 export default {
-  data () {
-    return {}
+  props: ['id'],
+  computed: {
+    ad () {
+      const id = this.id
+      return this.$store.getters.adById(id)
+    }
   }
 }
 </script>

@@ -1,7 +1,8 @@
 <template>
   <v-container
-    class="fill-height"
+    fill-height
     fluid
+    class="fill-height justify-center align-center"
   >
     <v-row
       align="center"
@@ -34,6 +35,7 @@
                 v-model="email"
                 :rules="emailRules"
                 required
+                color="warning"
               />
 
               <v-text-field
@@ -45,6 +47,7 @@
                 :counter="6"
                 :rules="passwordRules"
                 required
+                color="warning"
               />
             </v-form>
           </v-card-text>

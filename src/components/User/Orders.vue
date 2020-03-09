@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-layout row>
+    <v-layout row class="pt-10">
       <v-flex xs12 sm6 offset-sm3>
         <v-list
           subheader
